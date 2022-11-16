@@ -37,7 +37,7 @@ root.render(
   <BrowserRouter>
     <Switch>
       <Switch>
-        <Route path="/index" render={(props) => <Index {...props} />} />
+        <Route path="/Accueil" render={(props) => <Index {...props} />} />
         <Route
           path="/nucleo-icons"
           render={(props) => <NucleoIcons {...props} />}
@@ -54,8 +54,8 @@ root.render(
           path="/login-page"
           render={(props) => <LoginPage {...props} />}
         />
-        <Redirect to="/index" />
-        <Redirect from="/" to="/index" />
+        <Redirect to="/Accueil" />
+        <Redirect from="/" to="/Accueil" />
       </Switch>
     </Switch>
   </BrowserRouter>

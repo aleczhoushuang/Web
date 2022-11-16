@@ -67,7 +67,7 @@ function LandingPage() {
                     }}
                   ></div>
                   <h3>
-                    Qu'est-ce-que ShotunApp?
+                    Qu'est-ce-que ShotgunApp?
                   </h3>
                   <p>
                     ShotgunApp reprend un concept connu de toutes et de tous, et plus
@@ -78,7 +78,7 @@ function LandingPage() {
                   </p>
                   <p>
                     Le concept de shotgun s’utilise pour toute sorte d’événements, comme des week-ends
-                    organisés au ski par l’école avec un nombre de places limité, pour rentrer
+                    organisés au ski par l’école avec un nombre de places limitées, pour rentrer
                     dans une soirée privée, réserver des vêtements de promo, etc. Et c’est
                     pendant ces événements que le mot “shotgun” s’interprète de manière
                     beaucoup plus sérieuse à mesure que la compétition se dessine.
@@ -108,7 +108,7 @@ function LandingPage() {
                       className="rounded-circle img-fluid img-raised"
                       src={require("assets/img/profil_alec.jpg")}
                     ></img>
-                    <h4 className="title">ZHOU Alec</h4>
+                    <h4 className="title">Alec ZHOU</h4>
                     <p className="category text-info">Développeur</p>
                     <p className="description">
                       Développeur Backend de ce projet. Grâce à plusieurs
@@ -147,10 +147,10 @@ function LandingPage() {
                       className="rounded-circle img-fluid img-raised"
                       src={require("assets/img/tom.jpg")}
                     ></img>
-                    <h4 className="title">PACE Tom</h4>
+                    <h4 className="title">Tom PACE</h4>
                     <p className="category text-info">Développeur et Designer</p>
                     <p className="description">
-                      Créateur de la plateforme, son idée première était de simplifier le principe du shotgun dans les écoles et de créer une plateforme intuitive et réactive. Il développe sur SwiftUI et a codé l’application IOS disponible sur l’AppStore. Il s’est imposé comme le designer de l’app et a créé l’interface utilisateur que vous pouvez manipuler sur Androïde et iOS. Sa créativité lui a permis d’imaginer et de concevoir entièrement cette application mobile reprenant un principe que vous connaissez tous.
+                      Créateur de la plateforme, son idée première était de simplifier le principe du shotgun dans les écoles et de créer une plateforme intuitive et réactive. Il développe sur SwiftUI et a codé l’application IOS disponible sur l’AppStore. Il s’est imposé comme le designer de l’app et a créé l’interface utilisateur que vous pouvez manipuler sur Android et iOS. Sa créativité lui a permis d’imaginer et de concevoir entièrement cette application mobile reprenant un principe que vous connaissez tous.
                     </p>
                     <Button
                       className="btn-icon btn-round"
