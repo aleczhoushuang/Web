@@ -100,19 +100,19 @@ function IndexNavbar() {
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem
-                    href="https://shotgunapp.com/documents/cgu/PDC.html"
+                    href="https://kiclic.com/docs/PDC.html"
                     target="_blank"
                   >
                     Politique de confidentialité
                   </DropdownItem>
                   <DropdownItem
-                    href="https://shotgunapp.com/documents/cgu/CGU-2.html"
+                    href="https://kiclic.com/docs/CGU-2.html"
                     target="_blank"
                   >
                     Conditions générales d'utilisation
                   </DropdownItem>
                   <DropdownItem
-                    href="https://shotgunapp.com/documents/cgu/EULA.html"
+                    href="https://kiclic.com/docs/EULA.html"
                     target="_blank"
                   >
                     Conditions de licence pour l'utilisateur final

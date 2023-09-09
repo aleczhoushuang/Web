@@ -39,7 +39,7 @@ function IndexHeader() {
               className="n-logo"
               src={require("assets/img/shotgun.png")}
             ></img>
-            <h1 className="h1-seo">ShotgunApp</h1>
+            <h1 className="h1-seo">KiClic</h1>
             <h3>Be Fast To Win !</h3>
           </div>
         </Container>
