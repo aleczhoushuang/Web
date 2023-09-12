@@ -37,7 +37,7 @@ function IndexHeader() {
             <img
               alt="..."
               className="n-logo"
-              src={require("assets/img/shotgun.png")}
+              src={require("assets/img/logo.png")}
             ></img>
             <h1 className="h1-seo">KiClic</h1>
             <h3>Be Fast To Win !</h3>

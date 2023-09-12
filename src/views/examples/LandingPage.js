@@ -42,7 +42,7 @@ function LandingPage() {
               <Col className="ml-auto mr-auto text-center" md="8">
                 <h2 className="title">Qui sommes nous?</h2>
                 <h5 className="description">
-                  ShotgunApp est née de la rencontre de deux étudiants ingénieurs des Mines d’Albi. Avant nous, le shotgun était une institution, mais pas une application. Nous avons simplifié leur organisation : votre shotgun n’est désormais plus qu’à portée de doigt.
+                  Kiclic est née de la rencontre de deux étudiants ingénieurs des Mines d’Albi. Avant nous, le shotgun était une institution, mais pas une application. Nous avons simplifié leur organisation : votre shotgun n’est désormais plus qu’à portée de doigt.
                 </h5>
               </Col>
             </Row>
@@ -67,10 +67,10 @@ function LandingPage() {
                     }}
                   ></div>
                   <h3>
-                    Qu'est-ce-que ShotgunApp?
+                    Qu'est-ce-que Kiclic?
                   </h3>
                   <p>
-                    ShotgunApp reprend un concept connu de toutes et de tous, et plus
+                    Kiclic reprend un concept connu de toutes et de tous, et plus
                     particulièrement des étudiants en école d’ingénieur, de commerce, etc.
                     En effet, si vous passez quelque temps en école, il ne se passera pas une
                     journée sans que vous entendiez le mot “Shotgun”, celui si signifie: “Moi
@@ -84,7 +84,7 @@ function LandingPage() {
                     beaucoup plus sérieuse à mesure que la compétition se dessine.
                   </p>
                   <p>
-                    ShotgunApp permet aux utilisateurs de s’inscrire rapidement à un shotgun
+                    Kiclic permet aux utilisateurs de s’inscrire rapidement à un shotgun
                     ayant lieu à une certaine heure en rentrant un Shotcode à 6 chiffres
                     ( identifiant unique, propre à chaque shotgun ) dans la barre de recherche.
                     Contrairement aux Google doc actuels utilisés pour shotgun, l’application

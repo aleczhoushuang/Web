@@ -80,7 +80,7 @@ function Tabs() {
                     </TabPane>
                     <TabPane tabId="iconPills2">
                       <p>
-                      Votre profil est visible dans cet onglet, l’équipe de ShotgunApp vous incite à remplir les informations basiques pour que vous effectuiez vos shotguns le plus rapidement possible. En effet, au moment de réaliser votre shotgun, les informations exigées par l’utilisateurs seront préremplis si votre profil est complété.
+                      Votre profil est visible dans cet onglet, l’équipe de Kiclic vous incite à remplir les informations basiques pour que vous effectuiez vos shotguns le plus rapidement possible. En effet, au moment de réaliser votre shotgun, les informations exigées par l’utilisateurs seront préremplis si votre profil est complété.
                       </p>
                     </TabPane>
                     <TabPane tabId="iconPills3">
