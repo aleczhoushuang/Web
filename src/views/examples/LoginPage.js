@@ -53,7 +53,8 @@ function LoginPage() {
                     <div className="logo-container">
                       <img
                         alt="..."
-                        src={require("assets/img/now-logo.png")}
+                        src={require("assets/img/logo.png")}
+                        style={{borderRadius: "50%"}}
                       ></img>
                     </div>
                   </CardHeader>

@@ -38,7 +38,7 @@ function IndexHeader() {
               alt="..."
               className="n-logo"
               src={require("assets/img/logo.png")}
-              style="border-radius: 50%"
+              style={{borderRadius: "50%"}}
             ></img>
             <h1 className="h1-seo">Kiclic</h1>
             <h3>Be Fast To Win !</h3>
