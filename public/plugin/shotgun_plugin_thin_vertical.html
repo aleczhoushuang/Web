@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shotgun Widget</title>
+    <style>
+        .shotgun-widget {
+            flex: 1;
+        }
+
+        .shotgun-info {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            /* Supprimer les marges */
+            padding: 2%;
+            /* Vous pouvez ajuster ce padding selon vos besoins */
+            box-sizing: border-box;
+            border: 1px solid gray;
+            border-radius: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .shotgun-info img {
+            width: 96%;
+            height: auto;
+            margin-top: 2%;
+            border-radius: 25px;
+        }
+
+        .shotgun-info h2 {
+            display: block;
+            font-size: 8vw;
+            margin-top: 3%;
+            align-items: flex-start;
+            width: 96%;
+            display: flex;
+            text-align: left;
+            font-weight: bolder;
+            font-family: sans-serif;
+        }
+
+        .shotgun-info p {
+            font-size: 3vw;
+            color: gray;
+            margin: 2% 0;
+            align-items: flex-start;
+            width: 96%;
+            display: flex;
+            text-align: left;
+            font-family: sans-serif;
+        }
+
+        .countdown {
+            display: flex;
+            flex-direction: column;
+            /* Column layout */
+            align-items: center;
+            /* Center horizontally */
+            justify-content: center;
+            /* Center vertically */
+            width: 100%;
+            margin-top: 4%;
+        }
+
+        .countdown div {
+            margin-bottom: 10px;
+            /* Space between time units */
+        }
+
+        .countdown div span {
+            font-size: 8vw;
+            font-family: sans-serif;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: #ff69b4;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            width: 20vw;
+            height: 20vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 2%;
+        }
+
+        .countdown div label {
+            font-size: 6vw;
+            color: black;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .app-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 4%;
+        }
+
+        .open-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+            color: #fff;
+            font-size: 15vw;
+            height: 50vw;
+            width: 50vw;
+            text-align: center;
+            border-radius: 50%;
+            padding: 2vw;
+            text-decoration: none;
+            position: relative;
+            font-family: sans-serif;
+        }
+
+        .open-button img {
+            position: absolute;
+            bottom: 5%;
+            width: auto;
+            height: 10%;
+        }
+
+        .time_clock {
+            width: 50%;
+            /* Adjust width for column layout */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="shotgun-widget" data-id-shotgun="uuid">
+        <div class="shotgun-info">
+            <img src="" alt="Shotgun Image" style="display:none;">
+            <h2>Loading...</h2>
+            <div class="countdown">
+                <div class="time_clock">
+                    <span id="days">0</span>
+                    <label>J</label>
+                </div>
+                <div class="time_clock">
+                    <span id="hours">0</span>
+                    <label>H</label>
+                </div>
+                <div class="time_clock">
+                    <span id="minutes">0</span>
+                    <label>M</label>
+                </div>
+                <div class="time_clock">
+                    <span id="seconds">0</span>
+                    <label>S</label>
+                </div>
+            </div>
+            <div class="app-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.aleczhou.shotgunapp" target="_blank"
+                    class="open-button">
+                    Play
+                    <img src="C:/Users/Alecz/OneDrive/Documents/react_native/documents/logo_transparent.png"
+                        style="height: 15%; width: auto; padding-top: 30%;">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to extract the ID from the query string
+            function getShotgunIdFromQueryString() {
+                const params = new URLSearchParams(window.location.search);
+                return params.get('uuid');
+            }
+
+            function getParameterByName(name) {
+                const url = new URL(window.location.href);
+                return url.searchParams.get(name);
+            }
+
+            // Récupération du paramètre 'backgroundColor'
+            const backgroundColor = getParameterByName('backgroundColor');
+
+            if (backgroundColor) {
+                const backgroundElements = document.querySelectorAll('.shotgun-info');
+                backgroundElements.forEach(backgroundElements => {
+                    backgroundElements.style.backgroundColor = backgroundColor;
+                });
+            }
+
+
+            // Récupération du paramètre 'titleColor'
+            const titleColor = getParameterByName('titleColor');
+
+            // Si une couleur est passée dans l'URL, on l'applique au titre
+            if (titleColor) {
+                const titleElement = document.querySelector('.shotgun-info h2');
+                titleElement.style.color = titleColor;
+            }
+
+            // Récupération du paramètre 'timerColor'
+            const timerColor = getParameterByName('timerColor');
+
+            if (timerColor) {
+                const timerElements = document.querySelectorAll('.countdown div span');
+                timerElements.forEach(timerElement => {
+                    timerElement.style.color = timerColor;
+                });
+            }
+
+            // Récupération du paramètre 'timerBackColor'
+            const timerBackColor = getParameterByName('timerBackColor');
+
+            if (timerBackColor) {
+                const timerBackElements = document.querySelectorAll('.countdown div span');
+                timerBackElements.forEach(timerBackElements => {
+                    timerBackElements.style.background = timerBackColor;
+                });
+            }
+
+
+
+            // Récupération du paramètre 'timerHoursColor'
+            const timerHoursColor = getParameterByName('timerHoursColor');
+
+            if (timerHoursColor) {
+                const timerHoursElements = document.querySelectorAll('.countdown div label');
+                timerHoursElements.forEach(timerHoursElements => {
+                    timerHoursElements.style.color = timerHoursColor;
+                });
+            }
+
+
+            // Fetching data and updating the widget
+            function fetchShotgunInfo(uuid) {
+                const apiUrl = 'https://kiclic.com/api/web/nextShotPlugin/:' + uuid;
+                return fetch(apiUrl)
+                    .then(response => response.json())
+                    .catch(error => console.error('Error fetching data:', error));
+            }
+
+            function updateShotgunWidget(widgetElement, data) {
+                widgetElement.querySelector('h2').textContent = data.nom_shotgun || 'Name not found';
+
+                const imgElement = widgetElement.querySelector('img');
+                if (data.image_path) {
+                    imgElement.src = data.image_path;
+                    imgElement.style.display = 'block';
+                }
+
+                let countdownSeconds = data.second_until || 0;
+                function updateCountdown() {
+                    const days = Math.floor(countdownSeconds / (24 * 60 * 60));
+                    const hours = Math.floor((countdownSeconds % (24 * 60 * 60)) / (60 * 60));
+                    const minutes = Math.floor((countdownSeconds % (60 * 60)) / 60);
+                    const seconds = countdownSeconds % 60;
+
+                    widgetElement.querySelector('#days').textContent = days;
+                    widgetElement.querySelector('#hours').textContent = hours;
+                    widgetElement.querySelector('#minutes').textContent = minutes;
+                    widgetElement.querySelector('#seconds').textContent = seconds;
+
+                    if (countdownSeconds > 0) {
+                        countdownSeconds--;
+                        setTimeout(updateCountdown, 1000);
+                    }
+                }
+
+                updateCountdown();
+            }
+
+            const idShotgun = getShotgunIdFromQueryString();
+            if (idShotgun) {
+                fetchShotgunInfo(idShotgun).then(data => {
+                    const openButton = document.querySelector('.open-button');
+                    openButton.href = `https://kiclic.com/docs/shotgunDetails.html?id=${data.id_shotgun}`;
+                    updateShotgunWidget(document.querySelector('.shotgun-widget'), data);
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

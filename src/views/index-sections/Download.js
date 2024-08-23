@@ -67,7 +67,7 @@ function Download() {
               <Button
                 className="btn-neutral btn-icon btn-round"
                 color="facebook"
-                href="https://www.facebook.com/profile.php?id=100087967537475"
+                href="https://www.facebook.com/profile.php?id=61559798553597"
                 id="tooltip735272548"
                 size="lg"
                 target="_blank"
@@ -80,7 +80,7 @@ function Download() {
               <Button
                 className="btn-neutral btn-icon btn-round"
                 color="instagram"
-                href="https://www.instagram.com/shotgunapp_/"
+                href="https://www.instagram.com/kiclic_profite/"
                 id="tooltip647117716"
                 size="lg"
                 target="_blank"

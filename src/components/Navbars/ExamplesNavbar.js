@@ -79,7 +79,7 @@ function ExamplesNavbar() {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://www.facebook.com/profile.php?id=100087967537475"
+                  href="https://www.facebook.com/profile.php?id=61559798553597"
                   target="_blank"
                   id="facebook-tooltip"
                 >
@@ -92,7 +92,7 @@ function ExamplesNavbar() {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://www.instagram.com/shotgunapp_/"
+                  href="https://www.instagram.com/kiclic_profite/"
                   target="_blank"
                   id="instagram-tooltip"
                 >
