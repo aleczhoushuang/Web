@@ -59,7 +59,7 @@ root.render(
         <Route path="/plugin/shotgun_plugin_horizontal" render={() => window.location.href = '/public/plugin/shotgun_plugin_horizontal.html'} />
         <Route path="/plugin/shotgun_plugin_thin_horizontal" render={() => window.location.href = '/public/plugin/shotgun_plugin_thin_horizontal.html'} />
         {/* <Redirect to="/Accueil" /> */}
-        <Redirect from="/" to="/Accueil" />
+        {/* <Redirect from="/" to="/Accueil" /> */}
       </Switch>
     </Switch>
   </BrowserRouter>
