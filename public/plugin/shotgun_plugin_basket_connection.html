@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="stylesheet" href="./flip/flip.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shotgun Widget</title>
+    <style>
+        @font-face {
+            font-family: 'OpenSauceSans';
+            src: url('https://kiclic.com/docs/assets/Fonts/Open-Sauce-Sans/TTF/OpenSauceSans-Black.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'OpenSauceSansLight';
+            src: url('https://kiclic.com/docs/assets/Fonts/Open-Sauce-Sans/TTF/OpenSauceSans-Light.ttf') format('truetype');
+        }
+
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            /* Prevent scrolling */
+        }
+
+        .shotgun-widget {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            background-image: url('');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .shotgun-all {
+            padding: 1%;
+            width: 100%;
+            height: 99%;
+            box-sizing: border-box;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .shotgun-info {
+            width: 45%;
+            height: 35%;
+            padding-left: 1%;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .shotgun-info h2 {
+            font-size: 3vw;
+            margin-top: 3%;
+            align-items: flex-start;
+            width: 96%;
+            display: flex;
+            text-align: left;
+            font-weight: bolder;
+            font-family: sans-serif;
+            font-family: 'OpenSauceSans', sans-serif;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: space-around;
+            width: 96%;
+            margin-top: 4%;
+        }
+
+        .countdown div span {
+            font-size: 3vw;
+            font-family: sans-serif;
+            color: white;
+            box-shadow: -5px -5px 0px white;
+            background: linear-gradient(45deg, #62C4F2, #B161EB);
+            border-radius: 25%;
+            width: 6vw;
+            height: 6vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 2%;
+        }
+
+        .countdown div label {
+            font-size: 1.5vw;
+            margin-top: 1vw;
+            padding: 3%;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .app-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45%;
+            height: 30%;
+        }
+
+        .open-button {
+            font-family: 'OpenSauceSans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #62C4F2, #B161EB);
+            color: #fff;
+            font-size: 3.5vw;
+            width: 100%;
+            text-align: center;
+            border-radius: 50px;
+            padding: 5%;
+            margin-left: 8%;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .time_clock {
+            width: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .shotgun-titre {
+            max-width: 80%;
+            margin-left: 15%;
+            display: flex;
+            height: 25%;
+            align-items: flex-end;
+            justify-content: center;
+            flex-direction: column;
+
+        }
+
+        .shotgun-titre h2 {
+            font-family: 'OpenSauceSans', sans-serif;
+            background: linear-gradient(45deg, #62C4F2, #B161EB);
+            padding: 1%;
+            color: white;
+            font-size: 2vw;
+            box-shadow: -10px -10px 0px white;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limite à 3 lignes */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-height: calc(2 * 1.5em);
+            /* Limite à 3 lignes avec 1.5em par ligne */
+            line-height: 1.6em;
+        }
+
+        .btn_user {
+            color: white;
+            text-decoration: none;
+            font-size: 2vw;
+            background: linear-gradient(90deg, #0C1B54, #243F77);
+            /* Dégradé linéaire d'une teinte à l'autre */
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 2vw;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            border: 1px solid #314980;
+            width: 46%;
+            font-family: 'OpenSauceSansLight', sans-serif;
+            margin-left: 2%;
+            /* Ombre subtile */
+        }
+
+        .btn_user:hover {
+            background: linear-gradient(90deg, #3B4A85, #314980);
+            /* Ajustement de couleur au survol */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+            /* Ombre plus grande au survol */
+        }
+
+        .no_shotgun_view {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            width: 50%;
+            height: 55%;
+            padding: 2%;
+        }
+
+        .no_shotgun_view h2 {
+            color: white;
+            font-size: 4vw;
+            font-family: 'OpenSauceSans', sans-serif;
+            text-align: left;
+        }
+
+        .no_shotgun_view h3 {
+            color: white;
+            font-size: 2.5vw;
+            font-family: 'OpenSauceSansLight', sans-serif;
+            text-align: left;
+            font-weight: 100;
+            margin-top: 0;
+        }
+
+        .tick {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35%;
+            width: 55%;
+            padding-bottom: 1em;
+            font-size: 1rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
+                Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+        }
+
+        .tick-label {
+            font-size: 0.45em;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            font-family: 'OpenSauceSansLight', sans-serif;
+        }
+
+        .tick-group {
+            margin: 0 0.25em;
+            text-align: center;
+        }
+
+        /* Style de la page de chargement */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(45deg, #62C4F2, #B161EB);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+
+        }
+
+        /* Spinner */
+        .spinner {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: spin 1s linear infinite;
+            border-top-color: transparent;
+        }
+
+        /* Animation de rotation du spinner */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading-screen" class="loading-screen">
+        <div class="spinner"></div>
+        <img src="https://kiclic.com/docs/assets/KiclicProfiteLogoWhite.png"
+            style="height: 10%; width: auto; margin-top: 2%;">
+    </div>
+    <div class="shotgun-widget" data-id-shotgun="uuid">
+        <img src="https://kiclic.com/docs/assets/KiclicProfiteLogoWhite.png" style="height: 10%; width: auto;">
+        <div class="shotgun-all">
+            <div class="shotgun-titre">
+                <h2>Loading...</h2>
+            </div>
+            <div class="tick" data-did-init="handleTickInit">
+                <div data-repeat="true" data-layout="horizontal center fit"
+                    data-transform="preset(d, h, m, s) -> delay">
+                    <div class="tick-group">
+                        <div data-key="value" data-repeat="true" data-transform="pad(00) -> split -> delay">
+                            <span data-view="flip"></span>
+                        </div>
+
+                        <span data-key="label" data-view="text" class="tick-label"></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="app-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.aleczhou.shotgunapp" target="_blank"
+                    class="open-button">
+                    Open Kiclic
+                </a>
+            </div>
+
+            <div class="no_shotgun_view">
+                <h2>Aucun shotgun pour le moment</h2>
+                <h3>Retrouvez les prochains shotguns de votre marque sur l'application Kiclic</h3>
+            </div>
+
+
+            <a href="https://play.google.com/store/apps/details?id=com.aleczhou.shotgunapp" target="_blank"
+                class="btn_user">
+                Autres shotguns de Basket Connexion
+            </a>
+
+
+
+        </div>
+
+
+    </div>
+
+    <script>
+        let apiData = null;
+        let countdownInstance = null;
+
+        function getShotgunIdFromQueryString() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('uuid');
+        }
+
+        function fetchShotgunInfo(uuid) {
+            const apiUrl = 'https://kiclic.com/api/web/nextShotPlugin/:' + uuid;
+            return fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Stocker les données de l'API dans la variable globale
+                    apiData = data;
+                    return data;
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+
+        async function handleTickInit(tick) {
+            const idShotgun = getShotgunIdFromQueryString();
+            if (idShotgun) {
+                fetchShotgunInfo(idShotgun).then(data => {
+
+
+                    const openButton = document.querySelector('.open-button');
+                    openButton.href = `https://kiclic.com/docs/shotgunDetails.html?id=${data.id_shotgun}`;
+                    if (countdownInstance < 1) {
+                        countdownInstance = countdownInstance + 1;
+                        if (!data.id_shotgun) {
+                            updateNoShotgunWidget(document.querySelector('.shotgun-widget'), data);
+                        } else {
+                            let countdownSeconds = data.second_until || 0;
+                            const endDate = new Date(Date.now() + countdownSeconds * 1000);
+                            // Utilisation de Tick pour démarrer le compte à rebours
+                            Tick.count.down(endDate).onupdate = function (value) {
+                                tick.value = value;
+                            };
+                            updateShotgunWidget(document.querySelector('.shotgun-widget'), data);
+                        }
+                    }
+                    const loadingScreen = document.querySelector('.loading-screen');
+                    loadingScreen.style.display = 'none';
+
+                });
+            }
+        }
+
+        window.addEventListener('message', function (event) {
+            // Vérifiez que le message provient du parent (sécurité)
+            if (event.data.titleColor) {
+                const titleElement = document.querySelector('.shotgun-info h2');
+                titleElement.style.color = event.data.titleColor;
+            }
+        });
+
+        // Function to extract the ID from the query string
+        function getShotgunIdFromQueryString() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('uuid');
+        }
+
+        function getParameterByName(name) {
+            const url = new URL(window.location.href);
+            return url.searchParams.get(name);
+        }
+
+        // Récupération du paramètre 'backgroundColor'
+        const backgroundColor = getParameterByName('backgroundColor');
+
+        if (backgroundColor) {
+            const backgroundElements = document.querySelectorAll('.shotgun-all');
+            backgroundElements.forEach(backgroundElements => {
+                backgroundElements.style.backgroundColor = backgroundColor;
+            });
+        }
+
+
+        // Récupération du paramètre 'titleColor'
+        const titleColor = getParameterByName('titleColor');
+
+        // Si une couleur est passée dans l'URL, on l'applique au titre
+        if (titleColor) {
+            const titleElement = document.querySelector('.shotgun-info h2');
+            titleElement.style.color = titleColor;
+        }
+
+        // Récupération du paramètre 'textColor'
+        const textColor = getParameterByName('textColor');
+
+        // Si une couleur est passée dans l'URL, on l'applique au texte
+        if (textColor) {
+            const textElement = document.querySelector('.shotgun-info p');
+            textElement.style.color = textColor;
+        }
+
+
+
+
+        // Récupération du paramètre 'timerColor'
+        const timerColor = getParameterByName('timerColor');
+
+        if (timerColor) {
+            const timerElements = document.querySelectorAll('.countdown div span');
+            timerElements.forEach(timerElement => {
+                timerElement.style.color = timerColor;
+            });
+        }
+
+        // Récupération du paramètre 'timerBackColor'
+        const timerBackColor = getParameterByName('timerBackColor');
+
+        if (timerBackColor) {
+            const timerBackElements = document.querySelectorAll('.countdown div span');
+            timerBackElements.forEach(timerBackElements => {
+                timerBackElements.style.background = timerBackColor;
+            });
+        }
+
+
+
+        // Récupération du paramètre 'timerHoursColor'
+        const timerHoursColor = getParameterByName('timerHoursColor');
+
+        if (timerHoursColor) {
+            const timerHoursElements = document.querySelectorAll('.countdown div label');
+            timerHoursElements.forEach(timerHoursElements => {
+                timerHoursElements.style.color = timerHoursColor;
+            });
+        }
+
+        function updateNoShotgunWidget(widgetElement, data) {
+
+            const button_user = document.querySelector('.btn_user');
+            button_user.href = data.deeplink;
+            button_user.textContent = "Autres shotguns de " + data.fullname;
+
+            const imgElement = widgetElement.querySelector('img');
+            widgetElement.style.backgroundImage = `url(https://kiclic.com/docs/assets/BackgroundNoShotgunPlugin.png)`;
+            widgetElement.style.backgroundSize = 'cover';  // Make sure it covers the entire area
+            widgetElement.style.backgroundPosition = 'center';  // Center the image
+
+            const countdownSection = widgetElement.querySelector('.shotgun-info');
+            if (countdownSection) countdownSection.style.display = 'none';
+
+            const buttonSection = widgetElement.querySelector('.app-buttons');
+            if (buttonSection) buttonSection.style.display = 'none';
+
+            const shotgunTitle = widgetElement.querySelector('.shotgun-titre');
+            if (shotgunTitle) shotgunTitle.style.display = 'none';
+
+            const tick = widgetElement.querySelector('.tick');
+            if (tick) tick.style.display = 'none';
+
+        }
+
+        function updateShotgunWidget(widgetElement, data) {
+
+            const buttonSection = document.querySelector('.btn_user')
+            buttonSection.style.display = 'none';
+
+            const no_shotgun_view = document.querySelector('.no_shotgun_view')
+            no_shotgun_view.style.display = 'none';
+
+            widgetElement.querySelector('h2').textContent = data.nom_shotgun || 'Name not found';
+            // widgetElement.querySelector('p').textContent = data.description || 'Description not found';
+
+            const imgElement = widgetElement.querySelector('img');
+            if (data.image_path) {
+                widgetElement.style.backgroundImage = `url(${data.image_path})`;
+                widgetElement.style.backgroundSize = 'cover';  // Make sure it covers the entire area
+                widgetElement.style.backgroundPosition = 'center';  // Center the image
+            }
+
+            handleTickInit(widgetElement.querySelector('.tick'));
+        }
+
+    </script>
+
+    <script src="./flip/flip.min.js"></script>
+
+</body>
+
+</html>
