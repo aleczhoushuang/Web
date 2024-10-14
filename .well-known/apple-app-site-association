@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["V34R2UVS23.Tom-s-industry.ShotgunApp"],
+        "components": [
+          {
+            "/": "/api/shotgunDetails/*"
+          },
+          {
+            "/": "/api/redirectionDeeplinkProfil*"
+          }
+        ]
+      }
+    ]
+  }
+}
